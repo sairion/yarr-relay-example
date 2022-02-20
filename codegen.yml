@@ -1,0 +1,12 @@
+schema:
+  - https://raw.githubusercontent.com/graphql/swapi-graphql/master/schema.graphql
+generates:
+  'schema.graphql':
+    plugins:
+      - schema-ast
+    config:
+      includeDirectives: true
+      includeIntrospectionTypes: true  
+hooks:
+  afterAllFileWrite:
+    - prettier --write

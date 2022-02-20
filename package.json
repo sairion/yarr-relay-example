@@ -1,0 +1,53 @@
+{
+  "name": "yarr-relay-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jaeho Lee <me@jaeholee.org>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
+    "react": "18.0.0-rc.0-next-419ccc2b1-20220217",
+    "react-dom": "18.0.0-rc.0-next-419ccc2b1-20220217",
+    "react-relay": "^13.0.0-rc.0",
+    "react-scripts": "^5.0.0",
+    "relay-config": "^13.0.0-rc.0",
+    "relay-runtime": "^13.0.0-rc.0",
+    "yarr": "^2.0.2"
+  },
+  "scripts": {
+    "start": "concurrently \"nodemon --exec yarn relay\" \"react-scripts start\" ",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "relay": "relay-compiler --schema ./schema.graphql --src ./src/ --artifactDirectory ./src/__generated__ --extensions js jsx",
+    "generate:types": "graphql-codegen --errors-only"
+  },
+  "proxy": "http://localhost:5000/",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@graphql-codegen/add": "3.1.1",
+    "@graphql-codegen/cli": "2.3.1",
+    "@graphql-codegen/schema-ast": "2.4.1",
+    "babel-plugin-relay": "^12.0.0",
+    "concurrently": "^7.0.0",
+    "graphql": "^15.0.0",
+    "prettier": "2.5.1",
+    "relay-compiler": "^12.0.0"
+  }
+}
