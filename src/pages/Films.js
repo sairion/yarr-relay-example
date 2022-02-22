@@ -4,7 +4,7 @@ import { Link } from 'yarr';
 import graphql from 'babel-plugin-relay/macro';
 import { extractNodes } from '../utils';
 
-export function FilmsPage({ preloaded }) {
+function Page({ preloaded }) {
   const data = usePreloadedQuery(
     graphql`
       query FilmsQuery {
@@ -32,3 +32,5 @@ export function FilmsPage({ preloaded }) {
     </>
   );
 }
+
+export default Page;

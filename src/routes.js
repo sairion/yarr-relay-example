@@ -8,7 +8,7 @@ export const routes = [
     component: async () => {
       const module = await import('./pages/Films');
 
-      return module.FilmsPage;
+      return module.default;
     },
     path: '/films',
     preload: () => ({
@@ -19,7 +19,7 @@ export const routes = [
     component: async () => {
       const module = await import('./pages/Film');
 
-      return module.FilmDetailPage;
+      return module.default;
     },
     path: '/films/:id',
     preload: ({ id }) => ({
@@ -30,15 +30,19 @@ export const routes = [
     component: async () => {
       const module = await import('./pages/Home');
 
-      return module.HomePage;
+      return module.default;
     },
     path: '/',
+  },
+  {
+    path: '/',
+    redirectRules: () => '/films',
   },
   {
     component: async () => {
       const module = await import('./pages/NotFound');
 
-      return module.NotFoundPage;
+      return module.default;
     },
     path: '*',
   },

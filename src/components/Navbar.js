@@ -3,7 +3,6 @@ import { Link } from 'yarr';
 
 export const Navbar = () => (
   <nav>
-    <Link to="/">Home</Link>
-    <Link to="/films">Star Wars Films</Link>
+    <Link to="/films">Star Wars Films Wiki</Link>
   </nav>
 );
